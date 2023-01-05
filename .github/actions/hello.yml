@@ -1,0 +1,16 @@
+name: Hello World
+author: Severin Field
+description: placeholder
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true
+    default: Sevi
+    
+outputs:
+  time:
+    description: "the time of greeting"
+
+runs:
+  using: "node12"
+  main: "index.js"
