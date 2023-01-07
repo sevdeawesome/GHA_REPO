@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: echo Hello, world!
-        
+#       - uses: actions/checkout@v3
+#       - name: Cache random.txt
+#         uses: actions/cache@v2
+#         with:
+#           path: random.txt
+#           key: random-txt-${{ hashFiles('random.txt') }}
       - name: Cache random.txt
         uses: actions/cache@v2
         with:
           path: random.txt
-          key: random-txt-${{ hashFiles('random.txt') }}
-          
+          key: random-txt-db0d079c7603f0163248893069d20f99e338fef268f2e6a346e97208fece816e
       - name: Print contents of random.txt
         run: cat random.txt
 
