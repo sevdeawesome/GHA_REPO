@@ -1,0 +1,24 @@
+name: Cache Test
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      - name: Cache random.txt
+        uses: actions/cache@v2
+        with:
+          path: random.txt
+          key: random-txt-${{ hashFiles('random.txt') }}
+          
+      - name: Print contents of random.txt
+        run: cat random.txt
+
+
